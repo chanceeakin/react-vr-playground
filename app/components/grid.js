@@ -1,6 +1,8 @@
 import React from 'react'
 import { View, Text } from 'react-vr'
 
+// gah. I'm struggling.
+
 class Grid extends React.Component {
   constructor (props) {
     super(props);
