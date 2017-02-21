@@ -7,49 +7,31 @@ import {
 import Square from './app/components/square'
 
 class vr_1 extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      grid: []
+    }
+  }
+
+  makeGrid () {
+    for (var h = -2; h < 1; h++) {
+      for (var i = -2; i < 3; i++) {
+        this.state.grid.push(
+          <Square
+            translate={{translate: [i, i, h]}}
+            rotateX={{rotateX: -90}}
+          />
+        )
+      }
+    }
+  }
+
   render () {
+    this.makeGrid()
     return (
       <View>
-        <Square
-          translate={{translate: [-2, -2, -2]}}
-          rotateX={{rotateX: -90}}
-        />
-        <Square
-          translate={{translate: [-1, -1, -2]}}
-          rotateX={{rotateX: -90}}
-        />
-        <Square
-          translate={{translate: [0, 0, -2]}}
-          rotateX={{rotateX: -90}}
-        />
-        <Square
-          translate={{translate: [1, 1, -2]}}
-          rotateX={{rotateX: -90}}
-        />
-        <Square
-          translate={{translate: [2, 2, -2]}}
-          rotateX={{rotateX: -90}}
-        />
-        <Square
-          translate={{translate: [-2, 3, -1]}}
-          rotateX={{rotateX: -90}}
-        />
-        <Square
-          translate={{translate: [-1, 4, -1]}}
-          rotateX={{rotateX: -90}}
-        />
-        <Square
-          translate={{translate: [0, 5, -1]}}
-          rotateX={{rotateX: -90}}
-        />
-        <Square
-          translate={{translate: [1, 6, -1]}}
-          rotateX={{rotateX: -90}}
-        />
-        <Square
-          translate={{translate: [2, 7, -1]}}
-          rotateX={{rotateX: -90}}
-        />
+        {this.state.grid}
         <AmbientLight intensity={50} />
       </View>
     )
