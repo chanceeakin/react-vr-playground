@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Image, asset } from 'react-vr'
+import { View, Image, asset, Text } from 'react-vr'
 
 // gah. I'm struggling.
 
